@@ -26,3 +26,6 @@ setenv serverip 192.168.3.1
 dhcp rootfs.sq
 sf write 0x20006000 0x1d0000 0x5be000
 ```
+
+
+console=ttyS0,115200n8r root=/dev/mtdblock2 rootwait isp_flag=0x0
