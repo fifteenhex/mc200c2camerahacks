@@ -1,7 +1,6 @@
 Hacks for the MC200C2 module available from Banggood: 
 https://www.banggood.com/H_265-Mstar-2-Million-Starlight-Network-Module-Low-Bit-Rate-Monitoring-IP-Chip-With-Camera-p-1293598.html
 
-
 -- Flash Layout --
 
 0x000000020000-0x00000003f000 : "UBOOT"
@@ -9,6 +8,13 @@ https://www.banggood.com/H_265-Mstar-2-Million-Starlight-Network-Module-Low-Bit-
 0x0000001d0000-0x0000007b0000 : "SYSTEM"
 0x000000003000-0x000000004000 : "MXPT"
 0x0000007b0000-0x000000800000 : "CFG"
+
+
+-- Boot process -- 
+
+Kernel partition contains a kernel + initramfs combo image.
+Initramfs contains some sort of hacked up Android init.
+Squashfs is then mounted to /system
 
 -- Replacing squashfs --
 
