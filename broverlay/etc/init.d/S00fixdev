@@ -1,0 +1,13 @@
+#!/bin/sh
+start() {
+	mount -t tmpfs none /dev
+	mdev -s
+	mkdir /dev/pts
+	mount -t devpts none /dev/pts
+}
+
+case "$1" in
+  start)
+	start
+	;;
+esac
