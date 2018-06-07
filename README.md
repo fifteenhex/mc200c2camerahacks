@@ -18,9 +18,29 @@ Kernel partition contains a kernel + initramfs combo image.
 Initramfs contains some sort of hacked up Android init.
 Squashfs is then mounted to /system
 
-The root password seems to be set to a random value on each
-boot so really you need to replace the rootfs to get
-access.
+The root password is set to a random value on each
+boot by the main controller process so really you need to 
+replace the rootfs to get access.
+
+## Moving parts
+
+Once the camera has booted and mounted the squashfs it starts
+up a ton of crap. (TODO: fill in exact process names etc).
+
+There are a bunch of "something_server" processes that handle
+different parts of the operation and they all seem to
+communicate via a message queue or a socket with some sort of
+main controller process that is responsible for parsing the
+configuration and some weird sort of copy protection scheme
+that reads a file stored on a JFFS2 filesystem system in the
+CFG partition and does some magic to work out if the camera
+module is legit or not. Maybe there is some efuse or something
+in the SoC that it's comparing it with?
+
+Ignoring all of that junk the actual camera and H264/H265
+stuff seems fairly simple. There are a bunch of vendor
+supplied OpenMAX libraries (one for each hardware block)
+that should be usable with gstreamers gst-omx plugin.
 
 ## Replacing the squashfs
  
