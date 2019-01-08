@@ -50,3 +50,8 @@ setenv serverip 192.168.3.1
 dhcp rootfs.sq
 sf write 0x20006000 0x1d0000 0x5be000
 ```
+
+## Uboot and kernel sources
+
+https://github.com/fifteenhex/uboot_msc313e
+https://github.com/fifteenhex/linux_msc313e
