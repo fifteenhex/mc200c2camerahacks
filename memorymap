@@ -7,6 +7,7 @@
 0x1f000000 -- IO(??)
  0x1000 -- isp?
  0x1c00 -- sleep
+ 0x1c24 -- ??
  0x1e00 -- gpio
  0x2c00 -- fsp?
  0x2e00 -- qspi?
@@ -20,6 +21,8 @@
  0x6010 -- ??
  0x6014 -- ??
  0x6040 -- timer0
+  0x8 --
+  0xc --
  0x6048 -- ??
  0x604c -- ??
  0x7000 -- DID key
@@ -27,19 +30,27 @@
 0x1f200000 - RIU(??)
  0x400 -- bdma?
  0x800 -- ??
- 0x3c00 -- chiptop
+ 0x3c00 -- chiptop(??)
  0x3d40 -- ??
+ 0x3d4c -- ??
+ 0x70c4 -- ??
+ 0x71c0 -- ??
+ 0x79c8 -- ??
  0x21000 - uart0
+ 0x21008 
+ 0x21020 - ??
+ 0x21070 - ??
+
  0x22000 - spi0
  0x24400 - aesdma
  0x84600 - usb0
  0xa2000 - ethernet
-
+ 
 0x1f600000 -- XIU(??)
 
 0x20000000 -- MIU(??) main memory
 
-0xA0000000 -- IMI(??) seems to be 64K SRAM?
+0xA0000000 -- IMI(maybe internal memory interface) seems to be 64K SRAM?
 
 
 0xfd200000 -- DDR controller?
